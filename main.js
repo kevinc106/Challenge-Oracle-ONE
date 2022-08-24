@@ -15,7 +15,7 @@ const keys = {
 }
 
 function isLetter(letter){
-    return (letter >= 97 && letter <= 122) || (letter==32) || (letter==13);
+    return (letter >= 97 && letter <= 122) || (letter===32) || (letter===13) || (letter >= 0 && letter <= 31);
 }
 
 function isUpperCaseCharacter(letter){
@@ -101,7 +101,7 @@ function validateKey(event){
         event.returnValue = true;
     }  
 }
- 
+
 function copyResult(){
    let copyText = resultText.textContent;
    
