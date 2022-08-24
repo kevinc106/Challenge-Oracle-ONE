@@ -39,13 +39,17 @@ function isNotValidCharacter(letter){
  
 
 function isValidInput(text){ 
-    for (let index = 0; index < text.length; index++) {
-        let letter = text.charCodeAt(index);
-        if(isNotValidCharacter(letter)) {
-            return false;   
+    if(text.length>0){
+        for (let index = 0; index < text.length; index++) {
+            let letter = text.charCodeAt(index);
+            if(isNotValidCharacter(letter)) {
+                return false;   
+            }
         }
+        return true;
+    }else{
+        return false;
     }
-    return true;
 } 
 
 function getText(){
