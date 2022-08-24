@@ -3,6 +3,8 @@ const decryptButton = document.getElementById("decryptButton");
 const accents = ["á","é","í","ú","ó","Á","É","Í","Ú","Ó","ñ","Ñ"];   
 const textArea = document.getElementById("idInputText");
 const resultText = document.getElementById("idResult");
+const emptyArea = document.getElementById("emptyArea");
+const resultArea = document.getElementById("resultArea");
 const keys = {
     "e" : "enter",
     "i" : "imes",
@@ -49,38 +51,43 @@ function getText(){
     return document.getElementById("idInputText").value;
 }
 
+function changeDisplayResult(){
+    emptyArea.style.display="none";
+    resultArea.style.display="inline-block";
+}
+
 function encrypt(){
-    let textInput = getText();  
-    let e = "gato";
+    let textInput = getText();   
     let resp = "";
     if(isValidInput(textInput)){ 
-        console.log("Valido");
+        //console.log("Valido");
         for (let index = 0; index < textInput.length; index++) {  
             if(textInput[index] in keys){ 
-                console.log(textInput[index]);
+                //console.log(textInput[index]);
                 resp+=keys[textInput[index]];
             }else{
                 resp+=textInput[index];
             }
         }
+        changeDisplayResult();
+        resultText.textContent=resp;
     }else{
         alert("Texto invalido para encriptar");
     }
-    resultText.textContent=resp;
 }
 
 function decrypt(){
-    let textInput = getText(); 
-    let e = "gaitober y gaitai"; 
+    let textInput = getText();  
     if(isValidInput(textInput)){  
         for (const key in keys) {
             let replaceThis = keys[key]; 
             textInput = textInput.replaceAll(replaceThis,key);
-        }   
+        }  
+        changeDisplayResult(); 
+        resultText.textContent=textInput;
     }else{
         alert("Texto invalido para desencriptar");
     }
-    resultText.textContent=textInput;
 } 
 
 function fun(event){   
@@ -94,8 +101,8 @@ function fun(event){
     }  
 }
  
+
 encryptButton.addEventListener("click",encrypt);
 decryptButton.addEventListener("click",decrypt);
 textArea.addEventListener("keypress",fun);
-
- 
+resultArea.style.display="none";
