@@ -5,6 +5,7 @@ const textArea = document.getElementById("idInputText");
 const resultText = document.getElementById("idResult");
 const emptyArea = document.getElementById("emptyArea");
 const resultArea = document.getElementById("resultArea");
+const copyResultButton = document.getElementById("idCopyButton");
 const keys = {
     "e" : "enter",
     "i" : "imes",
@@ -90,7 +91,7 @@ function decrypt(){
     }
 } 
 
-function fun(event){   
+function validateKey(event){   
     let charCode = event.charCode;  
     if(isNotValidCharacter(charCode)){
         //console.log("Invalido");
@@ -101,8 +102,17 @@ function fun(event){
     }  
 }
  
+function copyResult(){
+   let copyText = resultText.textContent;
+   
+    navigator.clipboard.writeText(copyText);
+ 
+    alert("Texto copiado: " + copyText);
+}
+ 
 
 encryptButton.addEventListener("click",encrypt);
 decryptButton.addEventListener("click",decrypt);
-textArea.addEventListener("keypress",fun);
+textArea.addEventListener("keypress",validateKey);
+copyResultButton.addEventListener("click",copyResult)
 resultArea.style.display="none";
