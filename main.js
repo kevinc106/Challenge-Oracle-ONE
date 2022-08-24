@@ -2,7 +2,14 @@ const encryptButton = document.getElementById("encryptButton");
 const decryptButton = document.getElementById("decryptButton"); 
 const accents = ["á","é","í","ú","ó","Á","É","Í","Ú","Ó","ñ","Ñ"];   
 const textArea = document.getElementById("idInputText");
-const regexSpecial = /\W|_/g;
+const resultText = document.getElementById("idResult");
+const keys = {
+    "e" : "enter",
+    "i" : "imes",
+    "a" : "ai",
+    "o" : "ober",
+    "u" : "ufat",
+}
 
 function isLetter(letter){
     return (letter >= 97 && letter <= 122) || (letter==32) || (letter==13);
@@ -44,29 +51,45 @@ function getText(){
 
 function encrypt(){
     let textInput = getText();  
+    let e = "gato";
+    let resp = "";
     if(isValidInput(textInput)){ 
         console.log("Valido");
+        for (let index = 0; index < textInput.length; index++) {  
+            if(textInput[index] in keys){ 
+                console.log(textInput[index]);
+                resp+=keys[textInput[index]];
+            }else{
+                resp+=textInput[index];
+            }
+        }
     }else{
-        console.log("Invalido");
+        alert("Texto invalido para encriptar");
     }
+    resultText.textContent=resp;
 }
 
 function decrypt(){
     let textInput = getText(); 
-    if(isValidInput(textInput)){ 
-        console.log("Valido");
+    let e = "gaitober y gaitai"; 
+    if(isValidInput(textInput)){  
+        for (const key in keys) {
+            let replaceThis = keys[key]; 
+            textInput = textInput.replaceAll(replaceThis,key);
+        }   
     }else{
-        console.log("Invalido");
+        alert("Texto invalido para desencriptar");
     }
+    resultText.textContent=textInput;
 } 
 
 function fun(event){   
     let charCode = event.charCode;  
     if(isNotValidCharacter(charCode)){
-        console.log("Invalido");
+        //console.log("Invalido");
         event.returnValue = false; 
     }else{
-        console.log("Valido");
+        //console.log("Valido");
         event.returnValue = true;
     }  
 }
@@ -74,3 +97,5 @@ function fun(event){
 encryptButton.addEventListener("click",encrypt);
 decryptButton.addEventListener("click",decrypt);
 textArea.addEventListener("keypress",fun);
+
+ 
