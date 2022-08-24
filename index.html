@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="main.js" defer></script>
     <title>Encriptador</title>
 </head>
 <body>
@@ -11,10 +12,10 @@
         <h1>Encriptador de Texto</h1>
     </header>
     <main>
-        <textarea widt="600" heigth="800" ></textarea>
-        <button>Encriptar</button>
-        <button>Desencriptar</button>
-        <p>
+        <textarea id="idInputText" placeholder="Ingrese su texto aquí"></textarea>
+        <button id="encryptButton">Encriptar</button>
+        <button id="decryptButton">Desencriptar</button>
+        <p class="text">
             No hay texto
         </p>
     </main>
