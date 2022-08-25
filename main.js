@@ -66,10 +66,10 @@ function encrypt(){
     let textInput = getText();   
     let resp = "";
     if(isValidInput(textInput)){ 
-        //console.log("Valido");
+         
         for (let index = 0; index < textInput.length; index++) {  
             if(textInput[index] in keys){ 
-                //console.log(textInput[index]);
+                 
                 resp+=keys[textInput[index]];
             }else{
                 resp+=textInput[index];
@@ -99,10 +99,10 @@ function decrypt(){
 function validateKey(event){   
     let charCode = event.charCode;  
     if(isNotValidCharacter(charCode)){
-        //console.log("Invalido");
+         
         event.returnValue = false; 
     }else{
-        //console.log("Valido");
+         
         event.returnValue = true;
     }  
 }

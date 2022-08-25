@@ -135,8 +135,7 @@ button{
     width: 45%;
     height: 39em;
     border-radius: 20px;
-    box-shadow: 0em 0em 1em 0em #82B3FF;
-    outline: none;
+    box-shadow: 0em 0em 1em 0em #82B3FF; 
 } 
 
 .area{  
@@ -167,6 +166,7 @@ button{
     resize: none;
     height: 100%;
     width: 100%;
+    outline: none;
 }
 
 footer{
