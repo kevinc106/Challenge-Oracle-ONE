@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="main.js" defer></script>
+    <link rel="stylesheet" href="index.css">
     <title>Encriptador</title>
 </head>
 <body>
@@ -12,21 +13,44 @@
         <h1>Encriptador de Texto</h1>
     </header>
     <main>
-        <textarea id="idInputText" placeholder="Ingrese su texto aquí">gato</textarea>
-        <p>Solo letras minúsculas y sin acentos</p>
-        <button id="encryptButton">Encriptar</button>
-        <button id="decryptButton">Desencriptar</button>
-        <section id="emptyArea">
-            <strong >Ningún mensaje fue encontrado</strong>
-            <p>Ingresa el texto que desees encriptar o desencriptar</p>
+        <section class="input">
+            <div class="areatext">
+                <textarea id="idInputText" placeholder="Ingrese su texto aquí"></textarea> 
+            </div>
+            <div class="hint">
+                <p>Solo letras minúsculas y sin acentos</p>
+            </div> 
+            <div class="buttons">
+                <button class="button1" id="encryptButton">Encriptar</button>
+                <button class="button2" id="decryptButton">Desencriptar</button>
+            </div> 
         </section>
-        <section id="resultArea">
-            <p id="idResult">xxx</p>
-            <button id="idCopyButton">Copiar</button>
-        </section>
+       <section class="result">
+           <div class="area" id="emptyArea">
+            <img src="cute-cat-sleeping-laptop-with-coffee-cup-cartoon-character-animal-technology-isolated_138676-3197.webp" alt="Gato durmiendo sobre laptop">
+            <p>
+                Ningún mensaje fue encontrado.
+                <br>
+                Ingresa el texto que desees encriptar o desencriptar
+            </p>
+           </div>
+           <div class="area" id="resultArea">
+               <textarea id="idResult"></textarea>
+            </div>
+            <div class="buttons">
+                <button class="button2" id="idCopyButton">Copiar</button>
+            </div>
+       </section>
     </main>
     <footer>
-        Desarrollado por Kevin Camacho
+        <div>
+            <P>Desarrollado por Kevin Camacho</P>
+        </div>
+        <div> 
+            <a class="githubImage" href="https://github.com/kevinc106">
+                <img id="idimg" src="GitHub-Mark-120px-plus.png" alt="Logo de github">
+            </a>
+        </div>
     </footer>
 </body>
 </html>

@@ -1,0 +1,200 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+    font-family:  'Montserrat', sans-serif;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*----------------------------*/ 
+ 
+
+header{
+    margin: 2em 2em 0;
+}
+
+h1{
+    font-size: 2em;
+    color: #597492;
+    font-weight: bold;
+} 
+
+.input{
+    display: inline-block;
+    width: 45%;
+    margin-left: 5%;
+    
+}
+ 
+
+.areatext{
+    padding: 2em;
+}
+
+.hint p{
+    padding: 2em 2em 0 2em;
+    color: #b587c0
+}
+
+#idInputText{
+    font-size: 2em;
+    resize: none;
+    height: 16em;
+    width: 100%;
+    background: none;
+    border: none;
+    color: #07022a; 
+    outline: none;
+}
+
+#idInputText::placeholder{   
+    color: #07022a;
+}
+
+#idInputText:focus{
+    border: none;
+}
+ 
+.buttons {
+    display: flex;
+    margin: 1em;
+    justify-content: center;
+}
+
+button{
+    display: inline-block;
+    width: 50%;
+    padding: 1em 5em; 
+    border: 1px solid;
+    border-radius: 10px;
+    margin: 0 1em;
+    font-weight: bold;
+    cursor: pointer;
+}
+ 
+.button1{
+    background: #07022a;
+    color: #82b3ff; 
+    border: #07022a;
+}
+
+.button2{
+    background: #82b3ff;
+    color: #07022a;
+    border-color: #07022a;
+} 
+
+
+.result {
+    display: inline-block; 
+    vertical-align: top; 
+    background: #82B3FF;
+    border: 1px solid #82B3FF;
+    width: 45%;
+    height: 39em;
+    border-radius: 20px;
+    box-shadow: 0em 0em 1em 0em #82B3FF;
+    outline: none;
+} 
+
+.area{  
+    padding: 1em 2em;
+    margin: 1em; 
+    height: 30em; 
+    
+}
+
+#emptyArea{
+    text-align: center;
+}
+
+#emptyArea img{
+    width: 55%;
+}
+
+#emptyArea p{
+    font-size: 2em;
+    font-weight: bold;
+    margin-top: 1em;
+}
+
+#idResult{
+    background: #82b3ff;
+    color: #07022a;
+    border: none;
+    font-size: 1.5em; 
+    resize: none;
+    height: 100%;
+    width: 100%;
+}
+
+footer{
+    background: linear-gradient(#ffffff,#07022a);
+    text-align: center;
+    width: 100%;
+    padding: 2em 0;
+    
+}
+
+footer div{
+    margin-top: 12px;
+}
+
+footer p{
+    color: #07022a;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+#idimg{ 
+    transition-duration: 100ms;    
+    width: 38px;
+} 
+
+#idimg:hover{
+    content:url("GitHub-Mark-Light-120px-plus.png");
+}
+
+ 
