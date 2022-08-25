@@ -39,7 +39,7 @@ function isNotValidCharacter(letter){
  
 
 function isValidInput(text){ 
-    if(text.length>0){
+    if(text.length>0 && text.trim().length>0){
         for (let index = 0; index < text.length; index++) {
             let letter = text.charCodeAt(index);
             if(isNotValidCharacter(letter)) {
@@ -59,6 +59,7 @@ function getText(){
 function changeDisplayResult(){
     emptyArea.style.display="none";
     resultArea.style.display="inline-block";
+    copyResultButton.style.display="inline-block";
 }
 
 function encrypt(){
@@ -75,7 +76,7 @@ function encrypt(){
             }
         }
         changeDisplayResult();
-        resultText.textContent=resp;
+        resultText.value=resp;
     }else{
         alert("Texto invalido para encriptar");
     }
@@ -89,7 +90,7 @@ function decrypt(){
             textInput = textInput.replaceAll(replaceThis,key);
         }  
         changeDisplayResult(); 
-        resultText.textContent=textInput;
+        resultText.value=textInput;
     }else{
         alert("Texto invalido para desencriptar");
     }
@@ -107,11 +108,11 @@ function validateKey(event){
 }
 
 function copyResult(){
-   let copyText = resultText.textContent;
+   let copyText = resultText.value;
    
     navigator.clipboard.writeText(copyText);
  
-    alert("Texto copiado: " + copyText);
+    alert("Texto copiado");
 }
  
 
@@ -120,3 +121,4 @@ decryptButton.addEventListener("click",decrypt);
 textArea.addEventListener("keypress",validateKey);
 copyResultButton.addEventListener("click",copyResult)
 resultArea.style.display="none";
+copyResultButton.style.display="none";
