@@ -78,7 +78,7 @@ function encrypt(){
         changeDisplayResult();
         resultText.value=resp;
     }else{
-        alert("Texto invalido para encriptar");
+        alert("Texto inválido para encriptar");
     }
 }
 
@@ -92,7 +92,7 @@ function decrypt(){
         changeDisplayResult(); 
         resultText.value=textInput;
     }else{
-        alert("Texto invalido para desencriptar");
+        alert("Texto inválido para desencriptar");
     }
 } 
 
